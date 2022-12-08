@@ -6,9 +6,6 @@ condition1= 100000
 minReqMem = 30000000
 deviceMem = 70000000
 
-def createFolder(name, path, size):
-    return {name: 'name', 'path': path, 'size': size }
-
 def updateLocation(line, loc):
     if('..' in line):
         loc.pop(-1)
@@ -18,11 +15,6 @@ def updateLocation(line, loc):
     else:
         loc.append(line[5:]+'/')
     return loc
-
-def filterFilesystem(filesystem):
-    for index, path in enumerate(filesystem):
-        if(path not in filesystem[index-1]):
-            finalPath = path
 
 def updateDownToRoot(filesystem, path, value):
     pathElements = path.split('/')[1:-1]
